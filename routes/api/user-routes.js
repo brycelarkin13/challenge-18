@@ -7,28 +7,16 @@ const {
     getAllUsers,
     getUserById,
     addToFriendsList,
-    removeFromFriendsList
+    deleteFromFriendsList
 } = require('../../controllers/user-controller');
 
-// GET and POST routes api/user
-router
-    .route('/')
-    .get(getAllUsers)
-    .post(createUser);
+// /api/users <GET, POST>
+router.route('/').get(getAllUsers).post(createUser);
 
-// GET one, Put, and Delete api/users/<id>    
-router
-    .route('/:id')
-    .get(getUserById)
-    .put(updateUser)
-    .delete(deleteUser);
+//  /api/users/:id <GET, PUT, DELETE>
+router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 
-router
-    //.route('/:userId/friends/:friendId')
-    //.post(addToFriendsList);
-
-router
-    //.route('/:userId/friends/:friendId')
-    //.delete(removeFromFriendsList);
+//  /api/users/:userId/friends/:friendId <POST, DELETE>
+router.route('/:id/friends/:friendId').post(addToFriendsList).delete(deleteFromFriendsList)
 
 module.exports = router;
