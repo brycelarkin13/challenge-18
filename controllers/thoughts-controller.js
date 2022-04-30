@@ -3,11 +3,11 @@ const { Thoughts, User } = require('../models');
 const thoughtsController = {
      //get all thoughts
      getAllThoughts(req, res) {
-        Thought.find({})
+        Thoughts.find({})
             .then(dbThoughtData => res.json(dbThoughtData))
             .catch(err => {
                 console.log(err);
-                res.status(500).json(err);
+                res.status(404).json(err);
             });
     },
     
