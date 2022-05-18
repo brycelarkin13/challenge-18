@@ -28,4 +28,4 @@
 
   ## Questions
   GitHub username: brycelarkin13
-  If you have additional questions about this project, you can contact me at brycelarkin13. 
+  If you have additional questions about this project, you can contact me at blarkin13. 
